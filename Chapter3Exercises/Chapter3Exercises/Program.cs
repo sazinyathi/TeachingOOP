@@ -9,7 +9,7 @@ namespace Chapter3Exercises
          
             var transfomer = new Transfomer() {Type ="Boat" };
 
-            if (transfomer.Type == "Air")
+            if (transfomer.Type == TransfomerTypes.Air.ToString())
             {
                 transfomer = new Jet()
                 {
@@ -18,18 +18,18 @@ namespace Chapter3Exercises
                 };
                 Console.WriteLine(string.Format("When transformer is on air Wheels :{0} Max Speed: {1}", transfomer.Wheels, transfomer.Speed));
             }
-            else if(transfomer.Type == "Car")
+            else if(transfomer.Type == TransfomerTypes.Car.ToString())
             {
-                transfomer = new Jet()
+                transfomer = new Car()
                 {
                     Wheels = 4,
                     Speed = 100
                 };
                 Console.WriteLine(string.Format("When transformer is on road :{0} Max Speed: {1}", transfomer.Wheels, transfomer.Speed));
             }
-            else if (transfomer.Type == "Boat")
+            else if (transfomer.Type == TransfomerTypes.Boat.ToString())
             {
-                transfomer = new Jet()
+                transfomer = new Boat()
                 {
                     Wheels = 0,
                     Speed = 200
@@ -38,5 +38,14 @@ namespace Chapter3Exercises
             }
             Console.ReadLine();
         }
+
+
+    }
+
+    public enum TransfomerTypes
+    {
+        Air =  0,
+        Car =  1,
+        Boat = 2
     }
 }
